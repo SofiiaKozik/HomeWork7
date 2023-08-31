@@ -16,7 +16,7 @@ public class HttpStatusChecker {
             connection.setRequestMethod("GET");
             int responseCode = connection.getResponseCode();
             if (responseCode == 404) {
-                System.err.println("Image not found for status code: " + code);
+                throw new RuntimeException("Image not found for status code: " + code);
             }
             return uri;
         } finally {
