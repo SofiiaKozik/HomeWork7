@@ -9,8 +9,14 @@ public class Main {
        // System.out.println(httpStatusChecker.getStatusImage(400));
         //HttpStatusImageDownloader httpStatusImageDownloader = new HttpStatusImageDownloader();
         //httpStatusImageDownloader.downloadStatusImage(200);
-        HttpImageStatusCli httpImageStatusCli = new HttpImageStatusCli();
-        httpImageStatusCli.donloadIm();
+        try {
+            HttpImageStatusCli httpImageStatusCli = new HttpImageStatusCli();
+            httpImageStatusCli.donloadIm();
+        } catch (RuntimeException e) {
+            System.err.println("Image not found");
+        }
+
+
 
     }
 }
